@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { IoSearch } from "react-icons/io5";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const Navbar = () => {
   const navItems = [
@@ -69,12 +71,22 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-       {
-        navItems.map((item)=><Link className="px-5 font-semibold hover:text-primary duration-300" href={item.path} key={item.path}>{item.title}</Link>)
-       }
+        {navItems.map((item) => (
+          <Link
+            className="px-5 font-semibold hover:text-primary duration-300"
+            href={item.path}
+            key={item.path}
+          >
+            {item.title}
+          </Link>
+        ))}
       </div>
       <div className="navbar-end">
-        <a className="btn btn-outline btn-primary px-4">Button</a>
+     <div className="flex items-center justify-center space-x-3">
+     <AiOutlineShoppingCart className="text-xl" />
+     <IoSearch className="text-2xl"/>
+     </div>
+        <a className="btn btn-outline btn-primary px-4">Apointment</a>
       </div>
     </div>
   );
